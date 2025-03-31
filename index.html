@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Staff Application Form</h1>
+        <form id="applicationForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="experience">Why should we hire you?</label>
+            <textarea id="experience" placeholder="Tell us about your experience and skills..." required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("applicationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const experience = document.getElementById("experience").value;
+
+            alert("Thank you for your submission, " + name + "! We'll get back to you soon.");
+            document.getElementById("applicationForm").reset();
+        });
+    </script>
+</body>
+</html>
